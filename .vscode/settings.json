@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "python.formatting.provider": "autopep8",
+  "python.formatting.autopep8Args": [
+    "--ignore",
+    "E50",
+    "--max-line-length",
+    "120",
+    "--aggressive"
+  ]
+}
