@@ -4,6 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+django-cors-headers = "~=3.4.0"
+djangorestframework = "~=3.11.1"
+Django = "~=3.1.7"
+Pillow = "==8.1.2"
 
 [dev-packages]
 

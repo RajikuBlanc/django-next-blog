@@ -9,6 +9,5 @@ class Post(models.Model):
     content = models.TextField('本文')
     created_at = models.DateTimeField(auto_now_add=True)
 
-
-def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.title
