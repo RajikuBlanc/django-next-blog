@@ -7,7 +7,7 @@ from django.utils import timezone
 class UserManager(BaseUserManager):
     def create_user(self, username, email, password=None):
         if not email:
-            raise ValueError("メールアドレスは必須です")
+            raise ValueError('メールアドレスは必須です')
         email = self.normalize_email(email)
         user = self.model(username=username, email=email)
         user.set_password(password)
@@ -23,10 +23,10 @@ class UserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    user_id = models.CharField(max_length=255, default=uuid4, primary_key=True, editable=False)
-    user_name = models.CharField('名前', max_length=255, unique=True)
+    userId = models.CharField(max_length=255, default=uuid4, primary_key=True, editable=False)
+    username = models.CharField('名前', max_length=255, unique=True)
     email = models.EmailField('メールアドレス', unique=True)
-    created = models.DateTimeField('入会日', timezone.now)
+    created = models.DateTimeField('入会日', default=timezone.now)
 
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
